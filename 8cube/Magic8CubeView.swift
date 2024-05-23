@@ -1,5 +1,5 @@
 //
-//  Magic8CubeView.swift
+//  ContentView.swift
 //  8cube
 //
 //  Created by Sam Roman on 5/22/24.
@@ -141,12 +141,23 @@ struct Magic8CubeView: View {
         }
     }
     
+    private func playStartSounds(){
+        SoundManager.shared.playSoundsSequentially(with: [(wavFileName: "musical-tap-3", ahapFileName: "musical-tap-3", interval: 1),(wavFileName: "atmosphere-1", ahapFileName: "atmosphere-1", interval: 1)])
+    }
+    
+    private func playWhoosh(){
+        SoundManager.shared.playSound(wavFileName: "whoosh-2", ahapFileName: "whoosh-2")
+    }
+    
+    
+    
     private func startAnimation() {
         isAnimating = true
         showParticles = true
         answerOpacity = 0.0
         particleManager.resetParticles()
         shakeCube()
+        playStartSounds()
 
         offset = -CGFloat(selectedAnswerIndex * 50)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -157,6 +168,7 @@ struct Magic8CubeView: View {
                     answerOpacity = 1.0
                     isAnimating = false
                     particleManager.moveParticlesAwayFromTextCenter()
+                    playWhoosh()
                 }
             }
     }
@@ -179,124 +191,3 @@ struct Magic8CubeView_Previews: PreviewProvider {
     }
 }
 
-struct CustomParticleView: View {
-    @EnvironmentObject var particleManager: ParticleManager
-    
-    var body: some View {
-        ZStack {
-            ForEach(particleManager.particles) { particle in
-                Circle()
-                    .fill(Color.white.opacity(particle.opacity))
-                    .frame(width: particle.size, height: particle.size)
-                    .position(particle.position)
-                    .animation(Animation.linear(duration: particle.lifetime).repeatCount(1, autoreverses: false))
-            }
-        }
-        .mask(
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width: 200, height: 200)
-        )
-    }
-}
-
-class ParticleManager: ObservableObject {
-    @Published var particles = [Particle]()
-
-    init() {
-        createParticles()
-    }
-
-    func createParticles(sizeRange: ClosedRange<CGFloat> = 0.2...0.9, lifetimeRange: ClosedRange<Double> = 1...2, ensureDistanceFromTextCenter: Bool = false) {
-        particles.removeAll()
-        for _ in 0..<2000 {
-            let size = CGFloat.random(in: sizeRange)
-            let lifetime = Double.random(in: lifetimeRange)
-            var position: CGPoint
-
-            repeat {
-                position = CGPoint(x: CGFloat.random(in: 0...200), y: CGFloat.random(in: 0...200))
-            } while ensureDistanceFromTextCenter && distanceToTextCenter(position) < 40 // Ensure fewer particles near the text center if needed
-
-            let opacity = Double.random(in: 0.5...1.0)
-            let particle = Particle(size: size, lifetime: lifetime, position: position, initialPosition: position, opacity: opacity)
-
-            particles.append(particle)
-        }
-    }
-
-    func moveParticlesAwayFromTextCenter() {
-        for index in particles.indices {
-            let newPosition = calculateNewPosition(for: particles[index].initialPosition)
-            particles[index].position = newPosition
-            particles[index].lifetime = Double.random(in: 1...2)
-        }
-    }
-
-    func resetParticles() {
-        for index in particles.indices {
-            particles[index].position = particles[index].initialPosition
-            particles[index].opacity = Double.random(in: 0.1...1.0)
-        }
-    }
-
-    func shakeParticles() {
-        for index in particles.indices {
-            particles[index].position.x += CGFloat.random(in: -10...10)
-            particles[index].position.y += CGFloat.random(in: -10...10)
-        }
-    }
-
-    private func calculateNewPosition(for position: CGPoint) -> CGPoint {
-        let textCenter = CGPoint(x: 70, y: 100) // Adjusted for text alignment
-        let dx = position.x - textCenter.x
-        let dy = position.y - textCenter.y
-        let scaleFactor = CGFloat.random(in: 1.5...2.5)
-        let newX = textCenter.x + dx * scaleFactor
-        let newY = textCenter.y + dy * scaleFactor
-        let spreadX = dx > 0 ? CGFloat.random(in: 1.0...1.5) : CGFloat.random(in: 0.5...1.0)
-        let spreadY = dy > 0 ? CGFloat.random(in: 1.0...1.5) : CGFloat.random(in: 0.5...1.0)
-        return CGPoint(x: max(-20, min(220, newX * spreadX)), y: max(-20, min(220, newY * spreadY))) // Ensure particles stay within bounds
-    }
-
-    private func distanceToTextCenter(_ position: CGPoint) -> CGFloat {
-        let textCenter = CGPoint(x: 70, y: 100) // Adjusted for text alignment
-        let dx = position.x - textCenter.x
-        let dy = position.y - textCenter.y
-        return sqrt(dx * dx + dy * dy)
-    }
-}
-
-struct Particle: Identifiable {
-    let id = UUID()
-    var size: CGFloat
-    var lifetime: Double
-    var position: CGPoint
-    var initialPosition: CGPoint
-    var opacity: Double
-}
-
-extension Color {
-    init(hex: String) {
-        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var int: UInt64 = 0
-        Scanner(string: hex).scanHexInt64(&int)
-        let a, r, g, b: UInt64
-        switch hex.count {
-        case 3: // RGB (12-bit)
-            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-        case 6: // RGB (24-bit)
-            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-        case 8: // ARGB (32-bit)
-            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-        default:
-            (a, r, g, b) = (255, 0, 0, 0)
-        }
-        self.init(
-            .sRGB,
-            red: Double(r) / 255,
-            green: Double(g) / 255,
-            blue: Double(b) / 255,
-            opacity: Double(a) / 255
-        )
-    }
-}

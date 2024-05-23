@@ -11,6 +11,17 @@
 		3A4D12502BFED38F0034E9FE /* Magic8CubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D124F2BFED38F0034E9FE /* Magic8CubeView.swift */; };
 		3A4D12542BFED3920034E9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12532BFED3920034E9FE /* Assets.xcassets */; };
 		3A4D12572BFED3920034E9FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12562BFED3920034E9FE /* Preview Assets.xcassets */; };
+		3A4D12752BFFA8130034E9FE /* ParticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D12742BFFA8130034E9FE /* ParticleManager.swift */; };
+		3A4D12772BFFA8240034E9FE /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D12762BFFA8240034E9FE /* SoundManager.swift */; };
+		3A4D12792BFFA84B0034E9FE /* CustomParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D12782BFFA84B0034E9FE /* CustomParticleView.swift */; };
+		3A4D127B2BFFA89A0034E9FE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D127A2BFFA89A0034E9FE /* Color.swift */; };
+		3A4D127D2BFFA8C70034E9FE /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D127C2BFFA8C70034E9FE /* Particle.swift */; };
+		3A4D12812BFFA9C30034E9FE /* musical-tap-3.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D127E2BFFA9C20034E9FE /* musical-tap-3.ahap */; };
+		3A4D12822BFFA9C30034E9FE /* atmosphere-1.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D127F2BFFA9C20034E9FE /* atmosphere-1.ahap */; };
+		3A4D12832BFFA9C30034E9FE /* whoosh-2.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12802BFFA9C20034E9FE /* whoosh-2.ahap */; };
+		3A4D12852BFFA9CC0034E9FE /* atmosphere-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12842BFFA9CC0034E9FE /* atmosphere-1.wav */; };
+		3A4D12872BFFA9D60034E9FE /* musical-tap-3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12862BFFA9D60034E9FE /* musical-tap-3.wav */; };
+		3A4D12892BFFA9DD0034E9FE /* whoosh-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12882BFFA9DD0034E9FE /* whoosh-2.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,17 @@
 		3A4D12532BFED3920034E9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4D12562BFED3920034E9FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A4D12732BFF20A00034E9FE /* 8cube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8cube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4D12742BFFA8130034E9FE /* ParticleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleManager.swift; sourceTree = "<group>"; };
+		3A4D12762BFFA8240034E9FE /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		3A4D12782BFFA84B0034E9FE /* CustomParticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomParticleView.swift; sourceTree = "<group>"; };
+		3A4D127A2BFFA89A0034E9FE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3A4D127C2BFFA8C70034E9FE /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
+		3A4D127E2BFFA9C20034E9FE /* musical-tap-3.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "musical-tap-3.ahap"; sourceTree = "<group>"; };
+		3A4D127F2BFFA9C20034E9FE /* atmosphere-1.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "atmosphere-1.ahap"; sourceTree = "<group>"; };
+		3A4D12802BFFA9C20034E9FE /* whoosh-2.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "whoosh-2.ahap"; sourceTree = "<group>"; };
+		3A4D12842BFFA9CC0034E9FE /* atmosphere-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "atmosphere-1.wav"; sourceTree = "<group>"; };
+		3A4D12862BFFA9D60034E9FE /* musical-tap-3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "musical-tap-3.wav"; sourceTree = "<group>"; };
+		3A4D12882BFFA9DD0034E9FE /* whoosh-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "whoosh-2.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +67,17 @@
 			children = (
 				3A4D124D2BFED38F0034E9FE /* _cubeApp.swift */,
 				3A4D124F2BFED38F0034E9FE /* Magic8CubeView.swift */,
+				3A4D12742BFFA8130034E9FE /* ParticleManager.swift */,
+				3A4D12762BFFA8240034E9FE /* SoundManager.swift */,
+				3A4D127C2BFFA8C70034E9FE /* Particle.swift */,
+				3A4D127A2BFFA89A0034E9FE /* Color.swift */,
+				3A4D12782BFFA84B0034E9FE /* CustomParticleView.swift */,
+				3A4D12862BFFA9D60034E9FE /* musical-tap-3.wav */,
+				3A4D12882BFFA9DD0034E9FE /* whoosh-2.wav */,
+				3A4D127F2BFFA9C20034E9FE /* atmosphere-1.ahap */,
+				3A4D127E2BFFA9C20034E9FE /* musical-tap-3.ahap */,
+				3A4D12842BFFA9CC0034E9FE /* atmosphere-1.wav */,
+				3A4D12802BFFA9C20034E9FE /* whoosh-2.ahap */,
 				3A4D12532BFED3920034E9FE /* Assets.xcassets */,
 				3A4D12552BFED3920034E9FE /* Preview Content */,
 			);
@@ -121,8 +154,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4D12822BFFA9C30034E9FE /* atmosphere-1.ahap in Resources */,
 				3A4D12572BFED3920034E9FE /* Preview Assets.xcassets in Resources */,
+				3A4D12832BFFA9C30034E9FE /* whoosh-2.ahap in Resources */,
 				3A4D12542BFED3920034E9FE /* Assets.xcassets in Resources */,
+				3A4D12872BFFA9D60034E9FE /* musical-tap-3.wav in Resources */,
+				3A4D12852BFFA9CC0034E9FE /* atmosphere-1.wav in Resources */,
+				3A4D12812BFFA9C30034E9FE /* musical-tap-3.ahap in Resources */,
+				3A4D12892BFFA9DD0034E9FE /* whoosh-2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +173,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A4D12502BFED38F0034E9FE /* Magic8CubeView.swift in Sources */,
+				3A4D12772BFFA8240034E9FE /* SoundManager.swift in Sources */,
+				3A4D12792BFFA84B0034E9FE /* CustomParticleView.swift in Sources */,
+				3A4D127D2BFFA8C70034E9FE /* Particle.swift in Sources */,
+				3A4D12752BFFA8130034E9FE /* ParticleManager.swift in Sources */,
 				3A4D124E2BFED38F0034E9FE /* _cubeApp.swift in Sources */,
+				3A4D127B2BFFA89A0034E9FE /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

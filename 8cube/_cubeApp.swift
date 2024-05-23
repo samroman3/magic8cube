@@ -11,7 +11,7 @@ import SwiftUI
 struct _cubeApp: App {
     var body: some Scene {
         WindowGroup {
-            Magic8CubeView()
+                Magic8CubeView()
         }
     }
 }
