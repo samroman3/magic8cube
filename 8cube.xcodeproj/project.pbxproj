@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3A4D124E2BFED38F0034E9FE /* _cubeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D124D2BFED38F0034E9FE /* _cubeApp.swift */; };
-		3A4D12502BFED38F0034E9FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D124F2BFED38F0034E9FE /* ContentView.swift */; };
+		3A4D12502BFED38F0034E9FE /* Magic8CubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D124F2BFED38F0034E9FE /* Magic8CubeView.swift */; };
 		3A4D12542BFED3920034E9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12532BFED3920034E9FE /* Assets.xcassets */; };
 		3A4D12572BFED3920034E9FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D12562BFED3920034E9FE /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A4D124A2BFED38F0034E9FE /* 8cube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = 8cube.app; path = "/Users/samroman/Documents/Projects/8cube/build/Debug-iphoneos/8cube.app"; sourceTree = "<absolute>"; };
 		3A4D124D2BFED38F0034E9FE /* _cubeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _cubeApp.swift; sourceTree = "<group>"; };
-		3A4D124F2BFED38F0034E9FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3A4D124F2BFED38F0034E9FE /* Magic8CubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic8CubeView.swift; sourceTree = "<group>"; };
 		3A4D12532BFED3920034E9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4D12562BFED3920034E9FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A4D12732BFF20A00034E9FE /* 8cube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8cube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +36,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4D124C2BFED38F0034E9FE /* 8cube */,
+				3A4D12732BFF20A00034E9FE /* 8cube.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,7 +44,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4D124D2BFED38F0034E9FE /* _cubeApp.swift */,
-				3A4D124F2BFED38F0034E9FE /* ContentView.swift */,
+				3A4D124F2BFED38F0034E9FE /* Magic8CubeView.swift */,
 				3A4D12532BFED3920034E9FE /* Assets.xcassets */,
 				3A4D12552BFED3920034E9FE /* Preview Content */,
 			);
@@ -77,7 +78,7 @@
 			packageProductDependencies = (
 			);
 			productName = 8cube;
-			productReference = 3A4D124A2BFED38F0034E9FE /* 8cube.app */;
+			productReference = 3A4D12732BFF20A00034E9FE /* 8cube.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -132,7 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A4D12502BFED38F0034E9FE /* ContentView.swift in Sources */,
+				3A4D12502BFED38F0034E9FE /* Magic8CubeView.swift in Sources */,
 				3A4D124E2BFED38F0034E9FE /* _cubeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
